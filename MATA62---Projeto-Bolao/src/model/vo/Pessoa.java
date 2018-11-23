@@ -1,9 +1,6 @@
 
 package model.vo;
 
-import java.io.Serializable;
-import javax.management.timer.Timer;
-
 public abstract class Pessoa {
     
     protected String nome;
@@ -11,10 +8,15 @@ public abstract class Pessoa {
     protected String end;
     protected int telefone;
     protected String usuario;
+    private String senha;
     
+    public Pessoa() {
+    	
+    }
     
-    public Pessoa(){
-    
+    public Pessoa(String usuario, String senha){
+    	this.usuario = usuario;
+    	this.senha = senha;    
     }
 
     public Pessoa(String nome, int cpf, String end, int telefone, String usuario) {
@@ -48,13 +50,21 @@ public abstract class Pessoa {
     public void setEnd(String end) {
         this.end = end;
     }
+    
+    public String getUsuario() {
+    	return usuario;
+    }
+    
+    public void setUsuario(String usuario) {
+    	this.usuario = usuario;
+    }
 
     public String getSenha() {
-        return usuario;
+        return senha;
     }
 
     public void setSenha(String senha) {
-        this.usuario = senha;
+        this.senha = senha;
     }
 
 
@@ -65,6 +75,20 @@ public abstract class Pessoa {
                 "CPF: " + cpf + "\n"+ 
                 "Endereço: " + end + ", Tel: " + telefone +"\n";
     }
+
+	/**
+	 * @return the telefone
+	 */
+	public int getTelefone() {
+		return telefone;
+	}
+
+	/**
+	 * @param telefone the telefone to set
+	 */
+	public void setTelefone(int telefone) {
+		this.telefone = telefone;
+	}
     
     
        
