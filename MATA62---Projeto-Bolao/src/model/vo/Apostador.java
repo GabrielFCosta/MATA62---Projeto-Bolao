@@ -1,74 +1,35 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package model.vo;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import javax.management.timer.Timer;
+/**
+ *
+ * @author guest-78tdco
+ */
+public class Apostador extends Pessoa {
+	
+	public Apostador() {
+		super();
+	}
 
+    private int criarAposta(Jogo jogo, Bolao bolao, Apostador user, int palpiteA, int palpiteB) {
+        int identificadorAposta = 0;
 
-public class Apostador extends Pessoa implements Serializable {
-    String Senha;
-
-    public Apostador(String nome, String senha, int cpf, String end, int telefone, String usuario ) {
-        super(nome, cpf, end, telefone, usuario);
-        
+        return identificadorAposta;
     }
 
-    public String getSenha() {
-        return Senha;
+    private int criarBolao(Jogo jogo, Apostador user) {
+        int identificadorBolao = 0;
+
+        return identificadorBolao;
     }
 
-    public void setSenha(String Senha) {
-        this.Senha = Senha;
+    private void verificarResultado(Jogo jogo) {
+        // List<Bolao> vai ser o retorno deste metodo
+
     }
 
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public int getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(int cpf) {
-        this.cpf = cpf;
-    }
-
-    public String getEnd() {
-        return end;
-    }
-
-    public void setEnd(String end) {
-        this.end = end;
-    }
-
-    public int getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(int telefone) {
-        this.telefone = telefone;
-    }
-
-    public String getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
-    }
-
-  
-       
-    
-
-   
-    }
-
-   
-
-   
+}
