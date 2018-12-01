@@ -21,6 +21,8 @@ public class Principal extends JFrame implements ActionListener{
 	private static JButton  btnCadastro = new JButton("Cadastro");
 	private static JButton btnLogin = new JButton("Login");
 	private static CadastrarPessoa cadpessoa = null;
+	private static Login login = null;
+	
 	
 	/**
 	 * 
@@ -67,8 +69,12 @@ public class Principal extends JFrame implements ActionListener{
 		 }
 		 
 		 if(e.getSource() == btnLogin){
-			 
+			 try{
+				 login.dispose();
+			}catch(NullPointerException a){
+			}finally{
+				login = new Login();
+			}
 		 }
-		
 	}
 }

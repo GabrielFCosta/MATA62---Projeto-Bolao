@@ -6,12 +6,12 @@ package views;
  */
 
 import javax.swing.*;
+
+import controller.ControlPessoa;
+
 import java.awt.Point;
 import java.awt.event.*;
-/*
-import controller.ControlAdmin;
-import controller.ControlApostador;
-*/
+
 public class CadastrarPessoa extends JFrame implements ActionListener{
 	
 	/**
@@ -116,17 +116,23 @@ public class CadastrarPessoa extends JFrame implements ActionListener{
 		String em = email.getText().trim();
 		String us = usuario.getText().trim();
 		String sn = senha.getText().trim();
+		boolean adm = false;
 		if(nm.length() > 0 && cp.length() > 0 && tl.length() > 0 && em.length() > 0 && us.length() > 0&& sn.length() > 0){
-			/*
-			if(administrador.isSelected()) {
-				ControlAdmin control = new ControlAdmin();
-				
+			if(administrador.isSelected() || apostador.isSelected() ) {
+				ControlPessoa control = new ControlPessoa();
+				control.carregaPessoas();
+				if(administrador.isSelected()) adm = true;
+				if(control.cadPessoa(nm,cp,tl,em,us,sn,adm))
+	                JOptionPane.showMessageDialog(null,"Cadastro realizado.");
+	            else JOptionPane.showMessageDialog(null,"Cadastro não realizado.");
+	            nome.setText("");
+	        	cpf.setText("");
+	        	telefone.setText("");
+	        	email.setText("");
+	        	usuario.setText("");
+	        	senha.setText("");
+	        	control.gravaPessoas();
 			}
-			else {
-				ControlApostador control = new ControlApostador();
-			}
-			*/
-			
 		}
 	}
 

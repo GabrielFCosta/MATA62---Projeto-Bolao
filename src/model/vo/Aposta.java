@@ -1,17 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package model.vo;
 
-/**
- *
- * @author guest-78tdco
- */
+
 public class Aposta {
 
-    private Apostador apostador;
+    private Pessoa apostador;
     private int identificador;
 
     private int palpiteA;
@@ -19,13 +12,13 @@ public class Aposta {
 	/**
 	 * @return the apostador
 	 */
-	public Apostador getApostador() {
+	public Pessoa getApostador() {
 		return apostador;
 	}
 	/**
 	 * @param apostador the apostador to set
 	 */
-	public void setApostador(Apostador apostador) {
+	public void setApostador(Pessoa apostador) {
 		this.apostador = apostador;
 	}
 	/**

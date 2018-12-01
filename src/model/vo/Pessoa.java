@@ -1,14 +1,22 @@
 
 package model.vo;
 
-public abstract class Pessoa {
+import java.io.Serializable;
+
+
+public class Pessoa implements Serializable{
     
-    protected String nome;
-    protected int cpf ;
-    protected String email;
-    protected int telefone;
-    protected String usuario;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -7024227580155084017L;
+	private String nome;
+	private String cpf ;
+	private String email;
+	private String telefone;
+	private String usuario;
     private String senha;
+    private boolean adm;
     
     public Pessoa() {
     	
@@ -19,12 +27,13 @@ public abstract class Pessoa {
     	this.senha = senha;    
     }
 
-    public Pessoa(String nome, int cpf, String email, int telefone, String usuario) {
+    public Pessoa(String nome, String cpf, String email, String telefone, String usuario, boolean adm) {
         this.nome = nome;
         this.cpf = cpf;
         this.email = email;
         this.telefone = telefone;
         this.usuario = usuario;
+        this.adm = adm;
     }
 
     public String getNome() {
@@ -35,19 +44,19 @@ public abstract class Pessoa {
         this.nome = nome;
     }
 
-    public int getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(int cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
-    public String getemail() {
+    public String getEmail() {
         return email;
     }
 
-    public void setemail(String email) {
+    public void setEmail(String email) {
         this.email = email;
     }
     
@@ -67,13 +76,22 @@ public abstract class Pessoa {
         this.senha = senha;
     }
 
-	public int getTelefone() {
+	public String getTelefone() {
 		return telefone;
 	}
 
-	public void setTelefone(int telefone) {
+	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
+
+	public boolean isAdm() {
+		return adm;
+	}
+
+	public void setAdm(boolean adm) {
+		this.adm = adm;
+	}
+	
    
 }
 
