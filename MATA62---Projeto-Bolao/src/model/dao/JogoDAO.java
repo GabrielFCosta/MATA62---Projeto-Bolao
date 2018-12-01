@@ -29,12 +29,12 @@ public class JogoDAO {
         document.add(new Paragraph("\n"));
         document.add(new Paragraph("Dia " + "     " + "ENTRADA" + "    SAÍDA INTER" + "    ENTRADA INTER" + "      SAÍDA"));
         for (Aposta aposta : Executavel.lApostas) {
-            if (relat.getMatricula() == aposta.getMatricula() && relat.getMes().equals(aposta.getMes()) && relat.getAno() == aposta.getAno()) {
-                document.add(new Paragraph(aposta.getDia() + "------" + aposta.getEnt() + "------------" + aposta.getSaida_intervalo() + "-----------" + aposta.getEnt_intervalo() + "-----------" + aposta.getSaida()));
-            }
+//            if (relat.getMatricula() == aposta.getMatricula() && relat.getMes().equals(aposta.getMes()) && relat.getAno() == aposta.getAno()) {
+//                document.add(new Paragraph(aposta.getDia() + "------" + aposta.getEnt() + "------------" + aposta.getSaida_intervalo() + "-----------" + aposta.getEnt_intervalo() + "-----------" + aposta.getSaida()));
+//            }
         }
 
         document.close();
-        Desktop.getDesktop().open(new File("relatorio_" + relat.getMes() + "_" + relat.getNome() + ".pdf"));
+        Desktop.getDesktop().open(new File("Jogo:" + relat.getTimeA() + "x" + relat.getTimeB() + ".pdf"));
     }
 }
