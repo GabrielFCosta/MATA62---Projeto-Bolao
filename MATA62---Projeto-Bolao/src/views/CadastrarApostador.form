@@ -39,7 +39,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                              <Component id="jCampoPesqMatGer" min="-2" pref="73" max="-2" attributes="0"/>
+                              <Component id="jCampoPesqUsuario" min="-2" pref="73" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jBtnPesqGestor" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -78,14 +78,14 @@
                           <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jCampoNome" max="32767" attributes="0"/>
-                              <Component id="jCampoCargo" alignment="1" max="32767" attributes="0"/>
-                              <Component id="jCampoSetor" alignment="1" max="32767" attributes="0"/>
-                              <Component id="jCampoMat" max="32767" attributes="0"/>
-                              <Component id="jCampoSenhaGestor" max="32767" attributes="0"/>
+                              <Component id="jCampoTelefone" alignment="1" max="32767" attributes="0"/>
+                              <Component id="jCampoEnd" alignment="1" max="32767" attributes="0"/>
+                              <Component id="jCampoCPF" max="32767" attributes="0"/>
                               <Group type="102" attributes="0">
-                                  <Component id="jCampoSenhaGestor1" min="-2" pref="252" max="-2" attributes="0"/>
+                                  <Component id="jCampoSenha" min="-2" pref="252" max="-2" attributes="0"/>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
+                              <Component id="jCampoUsuario" alignment="1" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -105,12 +105,12 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jCampoMat" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jCampoCPF" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jCampoSetor" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jCampoEnd" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
@@ -119,20 +119,20 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jCampoCargo" min="-2" max="-2" attributes="0"/>
+                      <Component id="jCampoTelefone" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jCampoUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jCampoSenhaGestor" alignment="3" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jCampoSenhaGestor1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jCampoSenha" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="BtnNovo" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="BtnSalvar" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -144,7 +144,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jCampoPesqMatGer" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jCampoPesqUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jBtnPesqGestor" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -180,16 +180,19 @@
     </Component>
     <Component class="javax.swing.JTextField" name="jCampoNome">
     </Component>
-    <Component class="javax.swing.JTextField" name="jCampoMat">
+    <Component class="javax.swing.JTextField" name="jCampoCPF">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCampoCPFActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="jCampoSetor">
+    <Component class="javax.swing.JTextField" name="jCampoEnd">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
         <Property name="text" type="java.lang.String" value="Telefone"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jCampoCargo">
+    <Component class="javax.swing.JTextField" name="jCampoTelefone">
     </Component>
     <Component class="javax.swing.JButton" name="BtnNovo">
       <Properties>
@@ -242,14 +245,14 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBtnPesqGestorActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="jCampoPesqMatGer">
+    <Component class="javax.swing.JTextField" name="jCampoPesqUsuario">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCampoPesqMatGerActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCampoPesqUsuarioActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel8">
       <Properties>
-        <Property name="text" type="java.lang.String" value="CPF"/>
+        <Property name="text" type="java.lang.String" value="Usu&#xe1;rio"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel7">
@@ -291,16 +294,19 @@
         <Property name="text" type="java.lang.String" value="Usu&#xe1;rio"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JPasswordField" name="jCampoSenhaGestor">
-    </Component>
     <Component class="javax.swing.JLabel" name="jLabel10">
       <Properties>
         <Property name="text" type="java.lang.String" value="Senha"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JPasswordField" name="jCampoSenhaGestor1">
+    <Component class="javax.swing.JPasswordField" name="jCampoSenha">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCampoSenhaGestor1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCampoSenhaActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jCampoUsuario">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCampoUsuarioActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

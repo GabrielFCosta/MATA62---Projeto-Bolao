@@ -12,9 +12,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.reflect.Type;
 import java.util.List;
-import javax.swing.JOptionPane;
 import model.vo.Aposta;
-import static bolao.Executavel.lRegistros;
 
 /**
  *

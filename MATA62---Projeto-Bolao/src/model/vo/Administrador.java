@@ -10,10 +10,10 @@ package model.vo;
  * @author guest-78tdco
  */
 public class Administrador extends Pessoa {
-	
-	public Administrador() {
-		super();
-	}
+
+    public Administrador() {
+        super();
+    }
 
     private boolean excluirConta(Pessoa user) {
 

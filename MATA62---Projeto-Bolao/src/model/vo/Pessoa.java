@@ -1,26 +1,26 @@
-
 package model.vo;
 
 public abstract class Pessoa {
-    
+
     protected String nome;
-    protected int cpf ;
+    protected int cpf;
     protected String end;
     protected int telefone;
     protected String usuario;
     private String senha;
-    
+
     public Pessoa() {
-    	
-    }
-    
-    public Pessoa(String usuario, String senha){
-    	this.usuario = usuario;
-    	this.senha = senha;    
+
     }
 
-    public Pessoa(String nome, int cpf, String end, int telefone, String usuario) {
+    public Pessoa(String usuario, String senha) {
+        this.usuario = usuario;
+        this.senha = senha;
+    }
+
+    public Pessoa(String nome, String senha, int cpf, String end, int telefone, String usuario) {
         this.nome = nome;
+        this.senha = senha;
         this.cpf = cpf;
         this.end = end;
         this.telefone = telefone;
@@ -50,13 +50,13 @@ public abstract class Pessoa {
     public void setEnd(String end) {
         this.end = end;
     }
-    
+
     public String getUsuario() {
-    	return usuario;
+        return usuario;
     }
-    
+
     public void setUsuario(String usuario) {
-    	this.usuario = usuario;
+        this.usuario = usuario;
     }
 
     public String getSenha() {
@@ -67,31 +67,25 @@ public abstract class Pessoa {
         this.senha = senha;
     }
 
-
-
     @Override
     public String toString() {
-        return  "Nome: " + nome +"\n"+
-                "CPF: " + cpf + "\n"+ 
-                "Endereço: " + end + ", Tel: " + telefone +"\n";
+        return "Nome: " + nome + "\n"
+                + "CPF: " + cpf + "\n"
+                + "Endereço: " + end + ", Tel: " + telefone + "\n";
     }
 
-	/**
-	 * @return the telefone
-	 */
-	public int getTelefone() {
-		return telefone;
-	}
+    /**
+     * @return the telefone
+     */
+    public int getTelefone() {
+        return telefone;
+    }
 
-	/**
-	 * @param telefone the telefone to set
-	 */
-	public void setTelefone(int telefone) {
-		this.telefone = telefone;
-	}
-    
-    
-       
-    
+    /**
+     * @param telefone the telefone to set
+     */
+    public void setTelefone(int telefone) {
+        this.telefone = telefone;
+    }
+
 }
-

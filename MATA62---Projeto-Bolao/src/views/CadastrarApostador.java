@@ -6,9 +6,6 @@
 package views;
 
 import controller.ControladorAdministrador;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;
@@ -26,44 +23,46 @@ public class CadastrarApostador extends javax.swing.JFrame {
     public CadastrarApostador() {
         initComponents();
         setIcon();
-        jCampoMat.setDocument(new Documento1());
-        jCampoPesqMatGer.setDocument(new Documento1());
+        jCampoCPF.setDocument(new Documento1());
+        jCampoPesqUsuario.setDocument(new Documento1());
         desabilitarBotoes();
         desabilitarCampos();
     }
-private void desabilitarBotoes(){
-    BtnNovo.setEnabled(true);
-    BtnSalvar.setEnabled(false);
-    BtnCancelar.setEnabled(false);
-    
-   
-   } 
-   
-   private void habilitarBotoes(){
-    BtnNovo.setEnabled(false);
-    BtnSalvar.setEnabled(true);
-    BtnCancelar.setEnabled(true);
-   }
-   private void desabilitarCampos(){
-    jCampoNome.setEnabled(false);
-    jCampoMat.setEnabled(false);
-    jCampoSetor.setEnabled(false);
-    jCampoCargo.setEnabled(false);
-    jCampoSenhaGestor.setEnabled(false);
-    jCampoNome.setText("");
-    jCampoMat.setText("");
-    jCampoSetor.setText("");
-    jCampoCargo.setText("");
-    jCampoSenhaGestor.setText("");
-   } 
-   
-   private void habilitarCampos(){
-   jCampoNome.setEnabled(true);
-    jCampoMat.setEnabled(true);
-    jCampoSetor.setEnabled(true);
-    jCampoCargo.setEnabled(true);
-    jCampoSenhaGestor.setEnabled(true);
-   }
+
+    private void desabilitarBotoes() {
+        BtnNovo.setEnabled(true);
+        BtnSalvar.setEnabled(false);
+        BtnCancelar.setEnabled(false);
+
+    }
+
+    private void habilitarBotoes() {
+        BtnNovo.setEnabled(false);
+        BtnSalvar.setEnabled(true);
+        BtnCancelar.setEnabled(true);
+    }
+
+    private void desabilitarCampos() {
+        jCampoNome.setEnabled(false);
+        jCampoCPF.setEnabled(false);
+        jCampoEnd.setEnabled(false);
+        jCampoTelefone.setEnabled(false);
+        jCampoUsuario.setEnabled(false);
+        jCampoNome.setText("");
+        jCampoCPF.setText("");
+        jCampoEnd.setText("");
+        jCampoTelefone.setText("");
+        jCampoUsuario.setText("");
+    }
+
+    private void habilitarCampos() {
+        jCampoNome.setEnabled(true);
+        jCampoCPF.setEnabled(true);
+        jCampoEnd.setEnabled(true);
+        jCampoTelefone.setEnabled(true);
+        jCampoUsuario.setEnabled(true);
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -77,26 +76,26 @@ private void desabilitarBotoes(){
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jCampoNome = new javax.swing.JTextField();
-        jCampoMat = new javax.swing.JTextField();
-        jCampoSetor = new javax.swing.JTextField();
+        jCampoCPF = new javax.swing.JTextField();
+        jCampoEnd = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jCampoCargo = new javax.swing.JTextField();
+        jCampoTelefone = new javax.swing.JTextField();
         BtnNovo = new javax.swing.JButton();
         BtnSalvar = new javax.swing.JButton();
         BtnEditar = new javax.swing.JButton();
         BtnCancelar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jBtnPesqGestor = new javax.swing.JButton();
-        jCampoPesqMatGer = new javax.swing.JTextField();
+        jCampoPesqUsuario = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jBtnExcluir = new javax.swing.JButton();
         BtnPesqCanc = new javax.swing.JButton();
         jCampoFunc = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        jCampoSenhaGestor = new javax.swing.JPasswordField();
         jLabel10 = new javax.swing.JLabel();
-        jCampoSenhaGestor1 = new javax.swing.JPasswordField();
+        jCampoSenha = new javax.swing.JPasswordField();
+        jCampoUsuario = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -105,6 +104,12 @@ private void desabilitarBotoes(){
         jLabel3.setText("CPF");
 
         jLabel4.setText("End.");
+
+        jCampoCPF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCampoCPFActionPerformed(evt);
+            }
+        });
 
         jLabel5.setText("Telefone");
 
@@ -143,13 +148,13 @@ private void desabilitarBotoes(){
             }
         });
 
-        jCampoPesqMatGer.addActionListener(new java.awt.event.ActionListener() {
+        jCampoPesqUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCampoPesqMatGerActionPerformed(evt);
+                jCampoPesqUsuarioActionPerformed(evt);
             }
         });
 
-        jLabel8.setText("CPF");
+        jLabel8.setText("Usuário");
 
         jLabel7.setText("Apostador");
 
@@ -174,9 +179,15 @@ private void desabilitarBotoes(){
 
         jLabel10.setText("Senha");
 
-        jCampoSenhaGestor1.addActionListener(new java.awt.event.ActionListener() {
+        jCampoSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCampoSenhaGestor1ActionPerformed(evt);
+                jCampoSenhaActionPerformed(evt);
+            }
+        });
+
+        jCampoUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCampoUsuarioActionPerformed(evt);
             }
         });
 
@@ -198,7 +209,7 @@ private void desabilitarBotoes(){
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(20, 20, 20)
-                                .addComponent(jCampoPesqMatGer, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jCampoPesqUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jBtnPesqGestor))
                             .addGroup(layout.createSequentialGroup()
@@ -229,13 +240,13 @@ private void desabilitarBotoes(){
                             .addGap(16, 16, 16)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jCampoNome)
-                                .addComponent(jCampoCargo, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jCampoSetor, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jCampoMat)
-                                .addComponent(jCampoSenhaGestor)
+                                .addComponent(jCampoTelefone, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jCampoEnd, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jCampoCPF)
                                 .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jCampoSenhaGestor1, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(0, 0, Short.MAX_VALUE))))))
+                                    .addComponent(jCampoSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(0, 0, Short.MAX_VALUE))
+                                .addComponent(jCampoUsuario, javax.swing.GroupLayout.Alignment.TRAILING)))))
                 .addContainerGap(47, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -248,25 +259,25 @@ private void desabilitarBotoes(){
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jCampoMat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jCampoCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jCampoSetor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jCampoEnd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addComponent(jLabel5))
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCampoCargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jCampoTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(jCampoSenhaGestor))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jCampoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCampoSenhaGestor1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCampoSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -279,7 +290,7 @@ private void desabilitarBotoes(){
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(jCampoPesqMatGer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCampoPesqUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jBtnPesqGestor, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -297,52 +308,58 @@ private void desabilitarBotoes(){
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnNovoActionPerformed
-    habilitarBotoes();
-    habilitarCampos();
+        habilitarBotoes();
+        habilitarCampos();
     }//GEN-LAST:event_BtnNovoActionPerformed
 
     private void BtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCancelarActionPerformed
-    desabilitarBotoes();
-    desabilitarCampos();
+        desabilitarBotoes();
+        desabilitarCampos();
     }//GEN-LAST:event_BtnCancelarActionPerformed
 
     private void BtnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSalvarActionPerformed
-    String mat = jCampoMat.getText();
-    int campoMat = Integer.parseInt(mat);
-    ControladorAdministrador.inserir_Gestor(jCampoNome.getText(), jCampoSenhaGestor.getText(), campoMat, jCampoSetor.getText(), jCampoCargo.getText());
-      
-            ControladorAdministrador.backup_gerente();
-       
-    desabilitarBotoes();
-    desabilitarCampos();
+        String mat = jCampoCPF.getText();
+        int campoMat = Integer.parseInt(mat);
+        ControladorAdministrador.inserir_Gestor(jCampoNome.getText(), String.valueOf(jCampoSenha.getPassword()), Integer.parseInt(jCampoCPF.getText()), jCampoEnd.getText(), Integer.parseInt(jCampoTelefone.getText()), jCampoUsuario.getText());
+
+        ControladorAdministrador.backup_gerente();
+
+        desabilitarBotoes();
+        desabilitarCampos();
     }//GEN-LAST:event_BtnSalvarActionPerformed
 
     private void BtnPesqCancActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPesqCancActionPerformed
-           jCampoFunc.setText("");
-           jCampoPesqMatGer.setText("");
+        jCampoFunc.setText("");
+        jCampoPesqUsuario.setText("");
     }//GEN-LAST:event_BtnPesqCancActionPerformed
 
     private void jBtnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnExcluirActionPerformed
-    String mat = jCampoPesqMatGer.getText();
-    int campoMat = Integer.parseInt(mat);
-    ControladorAdministrador.excluir_Gestor(campoMat);
-           jCampoFunc.setText("");
-           jCampoPesqMatGer.setText("");
+        String usuario = jCampoPesqUsuario.getText();
+        ControladorAdministrador.excluir_Gestor(usuario);
+        jCampoFunc.setText("");
+        jCampoPesqUsuario.setText("");
     }//GEN-LAST:event_jBtnExcluirActionPerformed
 
     private void jBtnPesqGestorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnPesqGestorActionPerformed
-        String mat = jCampoPesqMatGer.getText();
-        int campopesqMat = Integer.parseInt(mat);
-        ControladorAdministrador.pesquisa_Gestor(campopesqMat);
+        String usuario = jCampoPesqUsuario.getText();
+        ControladorAdministrador.pesquisa_Gestor(usuario);
     }//GEN-LAST:event_jBtnPesqGestorActionPerformed
 
-    private void jCampoPesqMatGerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCampoPesqMatGerActionPerformed
+    private void jCampoPesqUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCampoPesqUsuarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCampoPesqMatGerActionPerformed
+    }//GEN-LAST:event_jCampoPesqUsuarioActionPerformed
 
-    private void jCampoSenhaGestor1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCampoSenhaGestor1ActionPerformed
+    private void jCampoSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCampoSenhaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCampoSenhaGestor1ActionPerformed
+    }//GEN-LAST:event_jCampoSenhaActionPerformed
+
+    private void jCampoCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCampoCPFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCampoCPFActionPerformed
+
+    private void jCampoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCampoUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCampoUsuarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -376,7 +393,7 @@ private void desabilitarBotoes(){
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new CadastrarApostador().setVisible(true);
-                
+
             }
         });
     }
@@ -389,14 +406,14 @@ private void desabilitarBotoes(){
     private javax.swing.JButton BtnSalvar;
     private javax.swing.JButton jBtnExcluir;
     private javax.swing.JButton jBtnPesqGestor;
-    private javax.swing.JTextField jCampoCargo;
+    private javax.swing.JTextField jCampoCPF;
+    private javax.swing.JTextField jCampoEnd;
     public static javax.swing.JTextField jCampoFunc;
-    private javax.swing.JTextField jCampoMat;
     private javax.swing.JTextField jCampoNome;
-    private javax.swing.JTextField jCampoPesqMatGer;
-    private javax.swing.JPasswordField jCampoSenhaGestor;
-    private javax.swing.JPasswordField jCampoSenhaGestor1;
-    private javax.swing.JTextField jCampoSetor;
+    private javax.swing.JTextField jCampoPesqUsuario;
+    private javax.swing.JPasswordField jCampoSenha;
+    private javax.swing.JTextField jCampoTelefone;
+    private javax.swing.JTextField jCampoUsuario;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -409,20 +426,20 @@ private void desabilitarBotoes(){
     // End of variables declaration//GEN-END:variables
 
     private void setIcon() {
-         
+
         this.setIconImage(new ImageIcon(getClass().getResource("/janelas/relogio_ponto.png")).getImage());
     }
-    
-}
-class Documento1 extends PlainDocument{
 
-      public void insertString(int offs, String str, AttributeSet a)throws BadLocationException {
-          int tamanho= (this.getLength()+ str.length());
-          if(tamanho<=7){
-             super.insertString(offs, str.replaceAll("[aA-zZ]", ""), a);
-          }
-          else{    
+}
+
+class Documento1 extends PlainDocument {
+
+    public void insertString(int offs, String str, AttributeSet a) throws BadLocationException {
+        int tamanho = (this.getLength() + str.length());
+        if (tamanho <= 7) {
+            super.insertString(offs, str.replaceAll("[aA-zZ]", ""), a);
+        } else {
             super.insertString(offs, str.replaceAll("[aA0-zZ9]", ""), a);
-          }
-      }
+        }
+    }
 }
